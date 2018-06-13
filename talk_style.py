@@ -18,7 +18,7 @@ class talker:
     def __init__(self, parent=None):
         pass
 
-    def def_talk(push):
+    def default_talk(push):
         res = client.talk(push)
         
         json_dict = {"speech": output_text,
