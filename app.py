@@ -21,7 +21,6 @@ install_aliases()
 from urllib.parse import urlparse, urlencode
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError
-import sportslive
 from google.cloud import bigquery
 from google.cloud import storage
 from google.oauth2 import service_account
