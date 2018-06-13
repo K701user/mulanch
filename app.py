@@ -25,6 +25,7 @@ import sportslive
 from google.cloud import bigquery
 from google.cloud import storage
 from google.oauth2 import service_account
+import talk_style
 
 import json
 import os
@@ -113,53 +114,11 @@ def loadsqlRequest(req):
 def processRequest(req):
     actiontype = req.get("result").get("action")
     results = req.get("result")
-    parameters = results.get("parameters")
-    try:
-        name = parameters.get("name")
-        print(name)
-    except:
-        pass
-    try:
-        date = parameters.get("date")
-        print(date)
-    except:
-        pass
-    try:
-        team1 = parameters.get("SoccerTeamName_for_Japan")
-        print(team1)
-    except:
-        pass
-    try:
-        team2 = parameters.get("SoccerTeamName_for_Japan1")
-        print(team2)
-    except:
-        pass
-    try:
-        if team1 is None:
-            team1 = parameters.get("BaseballTeamName_for_Japan")
-    except:
-        pass
-    try:
-        if team2 is None:
-            team2 = parameters.get("BaseballTeamName_for_Japan1")
-    except:
-        pass
-    try:
-        if type(date) is list:            
-            date = date[0].replace('-', '')
-        else:
-            date = date.replace('-', '')
-    except:
-        pass
-    print(actiontype)
-    if actiontype == "reply_to_player_record":
-        res = SL.execute_sql(name, "bplayerrecord", "name", ["name", "record"], day=date)
-    elif actiontype == "reply_to_news":
-        res = SL.execute_sql(name, "newsrecord", "title", ["title", "row2_text"], day=date)
-    elif actiontype == "reply_to_soccer_score" or actiontype == "reply_to_baseball_score":
-        res = SL.execute_sql2([team1, team2],"scorerecord", ["team1", "team2"], ["team1", "team2", "score"], day=date)
-    else:
-        return {}
+    q_text = req.get("queryResult").get("queryText")
+    
+    talker = talk_style.talker()
+    
+    res = talker.default_talk(push)
 
     return res
 
