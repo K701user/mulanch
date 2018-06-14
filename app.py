@@ -110,13 +110,13 @@ def loadsqlRequest(req):
 
 
 def processRequest(req):
-    actiontype = req.get("result").get("action")
-    results = req.get("result")
+    actiontype = req.get("queryResult").get("action")
+    parameters = req.get("queryResult").get("parameters")
     q_text = req.get("queryResult").get("queryText")
     
     talker = talk_style.talker()
     
-    res = talker.default_talk(push)
+    res = talker.default_talk(q_text)
 
     return res
 
