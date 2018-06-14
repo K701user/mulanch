@@ -110,9 +110,14 @@ def loadsqlRequest(req):
 
 
 def processRequest(req):
-    actiontype = req.get("queryResult").get("action")
-    parameters = req.get("queryResult").get("parameters")
-    q_text = req.get("queryResult").get("queryText")
+    try:
+        print(req)
+        actiontype = req.get("queryResult").get("action")
+        parameters = req.get("queryResult").get("parameters")
+        q_text = req.get("queryResult").get("queryText")
+        print(q_text)
+    except:
+        return {}
     
     talker = talk_style.talker()
     
