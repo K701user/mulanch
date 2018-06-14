@@ -18,6 +18,7 @@ class talker:
     def __init__(self, parent=None):
         pass
 
+    @staticmethod
     def default_talk(push):
         try:
             print(push)
