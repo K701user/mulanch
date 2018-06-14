@@ -23,13 +23,12 @@ class talker:
         try:
             print(push)
             res = client.talk(push)
-            print(res)
         except Exception as e:
             return {"error":e.message}
         
-        json_dict = {"speech": res,
-                     "displayText": res,
-                     "source": "apiai-news"}
+        json_dict = {"speech": res["results"][0]["reply"],
+                     "displayText": res["results"][0]["reply"],
+                     "source": "reply"}
         
         return json_dict
     
