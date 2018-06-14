@@ -26,8 +26,8 @@ class talker:
         except Exception as e:
             return {"error":e.message}
         
-        json_dict = {"speech": output_text,
-                     "displayText": output_text,
+        json_dict = {"speech": res,
+                     "displayText": res,
                      "source": "apiai-news"}
         
         return json_dict
