@@ -20,7 +20,9 @@ class talker:
 
     def default_talk(push):
         try:
+            print(push)
             res = client.talk(push)
+            print(res)
         except Exception as e:
             return {"error":e.message}
         
