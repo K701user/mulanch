@@ -23,6 +23,7 @@ class talker:
         try:
             print(push)
             res = client.talk(push)
+            print(res)
         except Exception as e:
             return {"error":e.message}
         
