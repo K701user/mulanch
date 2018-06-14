@@ -19,7 +19,10 @@ class talker:
         pass
 
     def default_talk(push):
-        res = client.talk(push)
+        try:
+            res = client.talk(push)
+        except Exception as e:
+            return {"error":e.message}
         
         json_dict = {"speech": output_text,
                      "displayText": output_text,
