@@ -56,6 +56,7 @@ class talker:
                 name, profile = random.choice(list(sample_members.items()))
                 member_list.append([name, profile])    
             
+            print(member_list)
             return post_carousel(member_list)
         except Exception as e:
             print(e.args)
@@ -142,6 +143,7 @@ class talker:
                 ]
         }
         
+        print(payload)
         return payload
     
     
