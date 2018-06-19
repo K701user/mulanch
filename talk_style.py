@@ -57,7 +57,7 @@ class talker:
                 member_list.append([name, profile])    
             
             return post_carousel(member_list)
-        except Error as e:
+        except Exception as e:
             print(e.args)
     
     @staticmethod
