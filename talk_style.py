@@ -45,7 +45,7 @@ class talker:
     def listup_member(push):
         try:
             print(push)
-            keys = morphological_analysis(push)
+            keys = self.morphological_analysis(push)
             
             # member_list = pickup_members(keys)
             '''
