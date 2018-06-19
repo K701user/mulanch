@@ -58,10 +58,10 @@ class talker:
             
             return post_carousel(member_list)
     
-    '''
-    形態素解析
-    textを入れると、形容詞と名詞のリストを出てきた回数が多い順に返す。
-    '''
+    # '''
+    # 形態素解析
+    # textを入れると、形容詞と名詞のリストを出てきた回数が多い順に返す。
+    # '''
     @staticmethod
     def morphological_analysis(text):
         txt = text
