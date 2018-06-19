@@ -62,6 +62,7 @@ class talker:
     # 形態素解析
     # textを入れると、形容詞と名詞のリストを出てきた回数が多い順に返す。
     # '''
+    
     @staticmethod
     def morphological_analysis(text):
         txt = text
@@ -86,6 +87,7 @@ class talker:
             keyword.append(word)
 
         return keyword
+    
     
     @staticmethod
     def post_carousel(member_list):
