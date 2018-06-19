@@ -28,13 +28,25 @@ import talk_style
 
 import json
 import os
+from flask import abort
 
+from linebot import (
+    LineBotApi, WebhookHandler
+)
+from linebot.exceptions import (
+    InvalidSignatureError
+)
+from linebot.models import (
+    MessageEvent, TextMessage, TextSendMessage,
+)
 from flask import Flask
 from flask import request
 from flask import make_response
 
 # Flask app should start in global layout
 app = Flask(__name__)
+line_bot_api = LineBotApi('F8Fkj5KU0iLcQC+QIc18RBgozcFV00veN0qf3aJfMhv15W+IotzpKBuOBBz9ulLvruwjgCHdw4mCNqwchuH3O7z4xkwLbyPGnloKOEcZ2UtCI9m2lg66k1LKCaAbEWg0LK2FBeaI+Q/v2lLxhInN9AdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('1d81556ec390b8eeb4da45ac8dae8d11')
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -125,6 +137,7 @@ def processRequest(req):
     if "Matching_requeststart" in actiontype:
         print("Matching_requeststart")
         res = talker.listup_member(q_text)
+        line_bot_api.reply_message()
     else:
         print("Other")
         res = talker.default_talk(q_text)
