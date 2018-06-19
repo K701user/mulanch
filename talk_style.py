@@ -88,7 +88,6 @@ class talker:
     @staticmethod
     def post_carousel(member_list):
         payload = {
-              "replyToken":"",
               "messages":[
                   {
                     "type": "template",
