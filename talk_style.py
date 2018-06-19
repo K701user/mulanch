@@ -56,7 +56,7 @@ class talker:
                 name, profile = random.choice(list(sample_members.items()))
                 member_list.append([name, profile])    
             
-            post_carousel(member_list)
+            return post_carousel(member_list)
     
     '''
     形態素解析
