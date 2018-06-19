@@ -89,10 +89,6 @@ class talker:
     
     @staticmethod
     def post_carousel(member_list):
-        header = {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer {ENTER_ACCESS_TOKEN}"
-        }
         payload = {
               "replyToken":"",
               "messages":[
@@ -148,7 +144,8 @@ class talker:
                   }
                 ]
         }
-        req = requests.post(REPLY_ENDPOINT, headers=header, data=json.dumps(payload))
+        
+        return payload
     
     
 def main():
