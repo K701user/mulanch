@@ -11,6 +11,7 @@ import requests
 
 from janome.tokenizer import Tokenizer
 
+
 talk_apikey = "E1HZR7u2fuhdtBbrATJN5yBYK5atFTl9"
 client = pya3rt.TalkClient(talk_apikey)
 
