@@ -6,3 +6,4 @@ google-cloud-bigquery==1.1.0
 google-cloud-storage==1.8.0
 janome==0.3.6
 pya3rt==1.1
+line-bot-sdk==1.5.0
