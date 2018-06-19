@@ -122,11 +122,12 @@ def processRequest(req):
     
     talker = talk_style.talker()
     
-    res = talker.default_talk(q_text)
+    if "Matching_requeststart" in actiontype:
+        res = listup_member(q_text)
+    else:
+        res = talker.default_talk(q_text)
 
     return res
-
-
 
 
 if __name__ == '__main__':
