@@ -41,8 +41,7 @@ class talker:
         
         return json_dict
    
-    @staticmethod
-    def listup_member(push):
+    def listup_member(self, push):
         try:
             print(push)
             keys = self.morphological_analysis(push)
@@ -57,7 +56,7 @@ class talker:
                 member_list.append([name, profile])    
             
             print(member_list)
-            return post_carousel(member_list)
+            return self.post_carousel(member_list)
         except Exception as e:
             print(e.args)
     
