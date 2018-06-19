@@ -55,7 +55,7 @@ def load_sql():
     res = json.dumps(res, indent=4)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
-    return r
+    return r, 200
 
 
 def loadsqlRequest(req):
