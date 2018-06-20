@@ -91,52 +91,36 @@ class talker:
         payload = {
               "messages":[
                   {
-                    "type": "template",
-                    "altText": "members",
-                    "template": {
-                        "type": "carousel",
-                        "columns": [
-
+                    "platform": "line",
+                    "carouselBrowse":{
+                    "items": [
                             {
-                              "thumbnailImageUrl": "http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
+                              "image": {"url":"http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
                               "title": member_list[0][0] + "(" + member_list[0][1][0] + ")",
-                              "text":  member_list[0][1][3] + ":" + member_list[0][1][4] + "(" + member_list[0][1][5] + ")",
-                              "actions": [
-
+                              "description":  member_list[0][1][3] + ":" + member_list[0][1][4] + "(" + member_list[0][1][5] + ")",
+                              "openUrlAction": 
                                   {
-                                      "type": "uri",
-                                      "label": "詳細を見る",
-                                      "uri": member_list[0][1][-1]
+                                      "url": member_list[0][1][-1]
                                   }
-                              ]
                             },
                             {
-                              "thumbnailImageUrl": "http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
+                              "image": {"url":"http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
                               "title": member_list[1][0] + "(" + member_list[1][1][0] + ")",
-                              "text":  member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
-                              "actions": [
-
+                              "description":  member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
+                              "openUrlAction": 
                                   {
-                                      "type": "uri",
-                                      "label": "詳細を見る",
-                                      "uri": member_list[1][1][-1]
+                                      "url": member_list[1][1][-1]
                                   }
-                              ]
                             },
                             {
-                              "thumbnailImageUrl": "http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
+                              "image": {"url":"http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
                               "title": member_list[2][0] + "(" + member_list[2][1][0] + ")",
-                              "text":  member_list[2][1][3] + ":" + member_list[2][1][4] + "(" + member_list[2][1][5] + ")",
-                              "actions": [
-
+                              "description":  member_list[2][1][3] + ":" + member_list[2][1][4] + "(" + member_list[2][1][5] + ")",
+                              "openUrlAction": 
                                   {
-                                      "type": "uri",
-                                      "label": "詳細を見る",
-                                      "uri": member_list[2][1][-1]
+                                      "url": member_list[2][1][-1]
                                   }
-                              ]
                             }
-
                         ]
                     }
                   }
