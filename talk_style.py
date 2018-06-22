@@ -10,7 +10,7 @@ import re
 import requests
 
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage
+    MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage, CarouselTemplate, CarouselColumn
 )
 
 from janome.tokenizer import Tokenizer
