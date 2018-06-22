@@ -9,6 +9,10 @@ import re
 
 import requests
 
+from linebot.models import (
+    MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage
+)
+
 from janome.tokenizer import Tokenizer
 
 
@@ -127,8 +131,76 @@ class talker:
                 ]
         }
         
+   image_carousel_template_message = TemplateSendMessage(
+    alt_text='Carousel template',
+    template=CarouselTemplate(
+        columns=[
+            CarouselColumn(
+                thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
+                title= member_list[0][0] + "(" + member_list[0][1][0] + ")",
+                text= member_list[0][1][3] + ":" + member_list[0][1][4] + "(" + member_list[0][1][5] + ")",
+                actions=[
+                    PostbackAction(
+                        label='postback1',
+                        text='postback text1',
+                        data='action=buy&itemid=1'
+                    ),
+                    MessageAction(
+                        label='message1',
+                        text='message text1'
+                    ),
+                    URIAction(
+                        label='member_portfolio',
+                        uri=member_list[0][1][-1]
+                    )
+                ]
+            ),
+            CarouselColumn(
+                thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
+                title= member_list[1][0] + "(" + member_list[1][1][0] + ")",
+                text= member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
+                actions=[
+                    PostbackAction(
+                        label='postback2',
+                        text='postback text2',
+                        data='action=buy&itemid=2'
+                    ),
+                    MessageAction(
+                        label='message2',
+                        text='message text2'
+                    ),
+                    URIAction(
+                        label='member_portfolio',
+                        uri=member_list[1][1][-1]
+                    )
+                ]
+            ),
+            CarouselColumn(
+                thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
+                title= member_list[2][0] + "(" + member_list[2][1][0] + ")",
+                text= member_list[2][1][3] + ":" + member_list[2][1][4] + "(" + member_list[2][1][5] + ")",
+                actions=[
+                    PostbackAction(
+                        label='postback3',
+                        text='postback text3',
+                        data='action=buy&itemid=3'
+                    ),
+                    MessageAction(
+                        label='message3',
+                        text='message text3'
+                    ),
+                    URIAction(
+                        label='member_portfolio',
+                        uri=member_list[2][1][-1]
+                    )
+                ]
+            ),
+        ]
+    )
+  )
+  
         print(payload)
-        return payload
+        return payload, image_carousel_template_message
     
     
 def main():
