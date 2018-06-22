@@ -93,8 +93,8 @@ class talker:
     @staticmethod
     def post_carousel(member_list):
         payload = {
-              "messages":[
-                  {
+            "messages":[
+                {
                     "platform": "line",
                     "carouselBrowse":{
                     "items": [
@@ -136,7 +136,7 @@ class talker:
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
+                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
                         title= member_list[0][0] + "(" + member_list[0][1][0] + ")",
                         text= member_list[0][1][3] + ":" + member_list[0][1][4] + "(" + member_list[0][1][5] + ")",
                         actions=[
@@ -156,7 +156,7 @@ class talker:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
+                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
                         title= member_list[1][0] + "(" + member_list[1][1][0] + ")",
                         text= member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
                         actions=[
@@ -176,7 +176,7 @@ class talker:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
+                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
                         title= member_list[2][0] + "(" + member_list[2][1][0] + ")",
                         text= member_list[2][1][3] + ":" + member_list[2][1][4] + "(" + member_list[2][1][5] + ")",
                         actions=[
