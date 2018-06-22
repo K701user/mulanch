@@ -137,7 +137,7 @@ def processRequest(req):
     if "Matching_requeststart" in actiontype:
         print("Matching_requeststart")
         res = talker.listup_member(q_text)
-        # line_bot_api.reply_message()
+        # line_bot_api.reply_message(req['events'][0]['replyToken'],res)
     else:
         print("Other")
         res = talker.default_talk(q_text)
