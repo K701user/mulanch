@@ -132,6 +132,8 @@ class talker:
                 ]
         }
         
+        print(payload)        
+        
         image_carousel_template_message = TemplateSendMessage(
             alt_text='Carousel template',
             template=CarouselTemplate(
@@ -200,7 +202,8 @@ class talker:
             )
         )
   
-        print(payload)
+        print(image_carousel_template_message)
+    
         return payload, image_carousel_template_message
     
     
