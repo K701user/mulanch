@@ -134,11 +134,11 @@ def processRequest(req):
     
     talker = talk_style.talker()
     
-    if "Matching_requeststart" in actiontype:
+    if "Matching_requeststart" in actiontype or "matchingrequeststart-followup" in req['outputContexts']['name']:
         print("Matching_requeststart")
         res, postres = talker.listup_member(q_text)
         try:
-            line_bot_api.reply_message(req['payload']['data']['replyToken'],postres)
+            line_bot_api.reply_message(req['payload']['data']['replyToken'], postres)
         except:
             pass
     else:
