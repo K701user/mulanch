@@ -12,7 +12,9 @@ import requests
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage, CarouselTemplate, CarouselColumn
 )
-import linebot.models
+from linebot.models.actions import (
+    PostbackAction, MessageAction, URIAction
+)
 
 from janome.tokenizer import Tokenizer
 
