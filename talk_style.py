@@ -148,6 +148,10 @@ class talker:
                         title= member_list[0][0] + "(" + member_list[0][1][0] + ")",
                         text= member_list[0][1][3] + ":" + member_list[0][1][4] + "(" + member_list[0][1][5] + ")",
                         actions=[
+                            MessageAction(
+                                label='この人に決める',
+                                text=　member_list[0][0]　+　'さんにアポイントをとってください。'
+                            ),
                             URIAction(
                                 label='member_portfolio',
                                 uri=member_list[0][1][-1]
@@ -158,7 +162,11 @@ class talker:
 #                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
                         title= member_list[1][0] + "(" + member_list[1][1][0] + ")",
                         text= member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
-                        actions=[
+                        actions=[     
+                            MessageAction(
+                                label='この人に決める',
+                                text=　member_list[1][0]　+　'さんにアポイントをとってください。'
+                            ),
                             URIAction(
                                 label='member_portfolio',
                                 uri=member_list[1][1][-1]
@@ -170,6 +178,10 @@ class talker:
                         title= member_list[2][0] + "(" + member_list[2][1][0] + ")",
                         text= member_list[2][1][3] + ":" + member_list[2][1][4] + "(" + member_list[2][1][5] + ")",
                         actions=[
+                            MessageAction(
+                                label='この人に決める',
+                                text=　member_list[2][0]　+　'さんにアポイントをとってください。'
+                            ),
                             URIAction(
                                 label='member_portfolio',
                                 uri=member_list[2][1][-1]
