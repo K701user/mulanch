@@ -142,7 +142,7 @@ def processRequest(req):
         print("Matching_requeststart")
         res, postres = talker.listup_member(q_text)
         try:
-            rtoken = req.get('payload').get('data').get('replyToken')
+            rtoken = req.get('originalDetectIntentRequest').get('payload').get('data').get('replyToken')
             print(rtoken)
             line_bot_api.reply_message(rtoken, postres)
         except:
