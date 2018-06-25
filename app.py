@@ -24,11 +24,6 @@ from urllib.error import HTTPError
 from google.cloud import bigquery
 from google.cloud import storage
 from google.oauth2 import service_account
-import talk_style
-
-import json
-import os
-from flask import abort
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -38,9 +33,16 @@ from linebot.exceptions import (
 )
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage,
-    URIAction, PostbackAction, DatetimePickerAction,
-    CarouselTemplate, CarouselColumn, PostbackEvent
+    URIAction, PostbackAction, MessageAction,
+    CarouselTemplate, CarouselColumn
 )
+
+import talk_style
+
+import json
+import os
+from flask import abort
+
 from flask import Flask
 from flask import request
 from flask import make_response
