@@ -37,7 +37,10 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
+    MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage,
+    CarouselTemplate, CarouselColumnm, URIAction,
+    PostbackAction, DatetimePickerAction,
+    CarouselTemplate, CarouselColumn, PostbackEvent,
 )
 from flask import Flask
 from flask import request
