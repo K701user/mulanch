@@ -105,7 +105,7 @@ def loadsqlRequest(req):
         else:
             date = date.replace('-', '')
     except:
-        pass
+        print("Line send miss")
     
     try:
         if reqtype == "p":
