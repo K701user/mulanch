@@ -148,6 +148,8 @@ def processRequest(req):
         except Exception as e:
             print("line send error")
             print(e.args)
+    elif "wakeup" in actiontype:
+        return {}
     else:
         print("Other")
         res = talker.default_talk(q_text)
