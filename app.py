@@ -39,7 +39,7 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage,
     URIAction, PostbackAction, DatetimePickerAction,
-    CarouselTemplate, CarouselColumn, PostbackEvent,
+    CarouselTemplate, CarouselColumn, PostbackEvent
 )
 from flask import Flask
 from flask import request
