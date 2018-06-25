@@ -150,7 +150,7 @@ class talker:
                         actions=[
                             MessageAction(
                                 label='この人に決める',
-                                text=　'１さんにアポイントをとってください。'
+                                text='１さんにアポイントをとってください。'
                             ),
                             URIAction(
                                 label='member_portfolio',
@@ -164,8 +164,8 @@ class talker:
                         text= member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
                         actions=[     
                             MessageAction(
-                                label='この人に決める',
-                                text=　'２さんにアポイントをとってください。'
+                                label='Translate Rice',
+                                text='米'
                             ),
                             URIAction(
                                 label='member_portfolio',
@@ -180,7 +180,7 @@ class talker:
                         actions=[
                             MessageAction(
                                 label='この人に決める',
-                                text=　'３さんにアポイントをとってください。'
+                                text='３さんにアポイントをとってください。'
                             ),
                             URIAction(
                                 label='member_portfolio',
