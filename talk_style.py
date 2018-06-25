@@ -27,7 +27,7 @@ talk_apikey = "E1HZR7u2fuhdtBbrATJN5yBYK5atFTl9"
 client = pya3rt.TalkClient(talk_apikey)
 
 sample_members = {
-                  "ななし":["かな", "性別", "年齢", "職業","特技","Rating","portforio url"],
+#                  "ななし":["かな", "性別", "年齢", "職業","特技","Rating","portforio url"],
                   "揚出 剛史":["あげいでたけし", "male", "47", "医師", "対話による体調診断をおこないます。", "15", "https://www.google.com/"],
                   "川内谷 茜音":["かわうちやあかね", "female", "51", "主婦", "料理をしにいきます。", "3", "https://www.yahoo.co.jp/"],
                   "谷合 沙樹":["たにあいさき", "unknown", "private", "PM", "PG講座を行います。", "5", "https://www.msn.com/ja-jp"],
