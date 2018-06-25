@@ -149,11 +149,11 @@ class talker:
                         title= member_list[0][0] + "(" + member_list[0][1][0] + ")",
                         text= member_list[0][1][3] + ":" + member_list[0][1][4] + "(" + member_list[0][1][5] + ")",
                         actions=[
-                            PostbackAction(
-                                label='postback1',
-                                text='postback text1',
-                                data='action=buy&itemid=1'
-                            ),
+#                             PostbackAction(
+#                                 label='postback1',
+#                                 text='postback text1',
+#                                 data='action=buy&itemid=1'
+#                             ),
                             MessageAction(
                                 label='message1',
                                 text='message text1'
@@ -169,11 +169,11 @@ class talker:
                         title= member_list[1][0] + "(" + member_list[1][1][0] + ")",
                         text= member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
                         actions=[
-                            PostbackAction(
-                                label='postback2',
-                                text='postback text2',
-                                data='action=buy&itemid=2'
-                            ),
+#                             PostbackAction(
+#                                 label='postback2',
+#                                 text='postback text2',
+#                                 data='action=buy&itemid=2'
+#                             ),
                             MessageAction(
                                 label='message2',
                                 text='message text2'
@@ -189,11 +189,11 @@ class talker:
                         title= member_list[2][0] + "(" + member_list[2][1][0] + ")",
                         text= member_list[2][1][3] + ":" + member_list[2][1][4] + "(" + member_list[2][1][5] + ")",
                         actions=[
-                            PostbackAction(
-                                label='postback3',
-                                text='postback text3',
-                                data='action=buy&itemid=3'
-                            ),
+#                             PostbackAction(
+#                                 label='postback3',
+#                                 text='postback text3',
+#                                 data='action=buy&itemid=3'
+#                             ),
                             MessageAction(
                                 label='message3',
                                 text='message text3'
