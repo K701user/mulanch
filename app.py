@@ -147,7 +147,7 @@ def processRequest(req):
             line_bot_api.reply_message(rtoken, postres)
         except Exception as e:
             print("line send error")
-            print(e.message)
+            print(e.args)
     else:
         print("Other")
         res = talker.default_talk(q_text)
