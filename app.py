@@ -145,8 +145,8 @@ def processRequest(req):
             rtoken = req.get('originalDetectIntentRequest').get('payload').get('data').get('replyToken')
             print(rtoken)
             line_bot_api.reply_message(rtoken, postres)
-        except:
-            print("line send error")
+        except Exception as e:
+            print("line send error : " + e.args)
     else:
         print("Other")
         res = talker.default_talk(q_text)
