@@ -17,9 +17,8 @@ from linebot.exceptions import (
 )
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage,
-    CarouselTemplate, CarouselColumnm, URIAction,
-    PostbackAction, DatetimePickerAction,
-    CarouselTemplate, CarouselColumn, PostbackEvent,
+    URIAction, PostbackAction, DatetimePickerAction,
+    CarouselTemplate, CarouselColumn, PostbackEvent
 )
 
 from janome.tokenizer import Tokenizer
