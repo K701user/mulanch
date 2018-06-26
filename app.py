@@ -140,7 +140,7 @@ def processRequest(req):
     
     if "Matching_requeststart" in actiontype or "matchingrequeststart-followup" in req.get('outputContexts').get('name'):
         print("Matching_requeststart")
-        res, postres = talker.listup_member(q_text)
+        postres = talker.listup_member(q_text)
         try:
             rtoken = req.get('originalDetectIntentRequest').get('payload').get('data').get('replyToken')
             print(rtoken)
