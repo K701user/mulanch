@@ -154,7 +154,7 @@ class talker:
   
         print(image_carousel_template_message)
     
-        return payload, image_carousel_template_message
+        return image_carousel_template_message
     
     
 def main():
