@@ -67,7 +67,7 @@ class talker:
                 member_list.append([name, profile])    
             
             print(member_list)
-            return self.post_carousel(member_list)
+            return self.listup_member_post_carousel(member_list)
         except Exception as e:
             print(e.args)
     
@@ -97,97 +97,57 @@ class talker:
         return keyword
         
     @staticmethod
-    def post_carousel(member_list):
-        payload = {
-            "messages":[
-                {
-                    "platform": "line",
-                    "carouselBrowse":{
-                    "items": [
-                            {
-                              "image": {"url":"http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
-                              "title": member_list[0][0] + "(" + member_list[0][1][0] + ")",
-                              "description":  member_list[0][1][3] + ":" + member_list[0][1][4] + "(" + member_list[0][1][5] + ")",
-                              "openUrlAction": 
-                                  {
-                                      "url": member_list[0][1][-1]
-                                  }
-                            },
-                            {
-                              "image": {"url":"http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
-                              "title": member_list[1][0] + "(" + member_list[1][1][0] + ")",
-                              "description":  member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
-                              "openUrlAction": 
-                                  {
-                                      "url": member_list[1][1][-1]
-                                  }
-                            },
-                            {
-                              "image": {"url":"http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800))},
-                              "title": member_list[2][0] + "(" + member_list[2][1][0] + ")",
-                              "description":  member_list[2][1][3] + ":" + member_list[2][1][4] + "(" + member_list[2][1][5] + ")",
-                              "openUrlAction": 
-                                  {
-                                      "url": member_list[2][1][-1]
-                                  }
-                            }
-                        ]
-                    }
-                  }
-                ]
-        }
-        
-        print(payload)        
-        
+    def listup_member_post_carousel(member_list):      
         image_carousel_template_message = TemplateSendMessage(
             alt_text='Carousel template',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-#                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
-                        title= member_list[0][0] + "(" + member_list[0][1][0] + ")",
-                        text= member_list[0][1][3] + ":" + member_list[0][1][4] + "(" + member_list[0][1][5] + ")",
+                        thumbnail_image_url="https://pictogram-illustration.com/material/7{0:02d}-pictogram-illustration.jpg".format(random.randint(1, 80)),
+                        title= member[0] + "(" + member[1][0] + ")",
+                        text= member[1][3] + ":" + member[1][4] + "(" + member[1][5] + ")",
                         actions=[
                             MessageAction(
                                 label='この人に決める',
-                                text='１さんにアポイントをとってください。'
+                                text=member[0]+'さんにアポイントをとってください。'
                             ),
                             URIAction(
                                 label='member_portfolio',
-                                uri=member_list[0][1][-1]
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-#                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
-                        title= member_list[1][0] + "(" + member_list[1][1][0] + ")",
-                        text= member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
-                        actions=[     
-                            MessageAction(
-                                label='Translate Rice',
-                                text='米'
-                            ),
-                            URIAction(
-                                label='member_portfolio',
-                                uri=member_list[1][1][-1]
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-#                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
-                        title= member_list[2][0] + "(" + member_list[2][1][0] + ")",
-                        text= member_list[2][1][3] + ":" + member_list[2][1][4] + "(" + member_list[2][1][5] + ")",
-                        actions=[
-                            MessageAction(
-                                label='この人に決める',
-                                text='３さんにアポイントをとってください。'
-                            ),
-                            URIAction(
-                                label='member_portfolio',
-                                uri=member_list[2][1][-1]
+                                uri=member[1][-1]
                             )
                         ]
                     )
+                    for member in member_list
+#                     CarouselColumn(
+# #                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
+#                         title= member_list[1][0] + "(" + member_list[1][1][0] + ")",
+#                         text= member_list[1][1][3] + ":" + member_list[1][1][4] + "(" + member_list[1][1][5] + ")",
+#                         actions=[     
+#                             MessageAction(
+#                                 label='Translate Rice',
+#                                 text='米'
+#                             ),
+#                             URIAction(
+#                                 label='member_portfolio',
+#                                 uri=member_list[1][1][-1]
+#                             )
+#                         ]
+#                     ),
+#                     CarouselColumn(
+# #                        thumbnail_image_url="http://pictogram2.com/p/p0{0:03d}/1.jpg".format(random.randint(100, 800)),
+#                         title= member_list[2][0] + "(" + member_list[2][1][0] + ")",
+#                         text= member_list[2][1][3] + ":" + member_list[2][1][4] + "(" + member_list[2][1][5] + ")",
+#                         actions=[
+#                             MessageAction(
+#                                 label='この人に決める',
+#                                 text='３さんにアポイントをとってください。'
+#                             ),
+#                             URIAction(
+#                                 label='member_portfolio',
+#                                 uri=member_list[2][1][-1]
+#                             )
+#                         ]
+#                     )
                 ]
             )
         )
