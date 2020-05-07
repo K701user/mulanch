@@ -46,11 +46,30 @@ class talker:
             print(res)
         except Exception as e:
             return {"error":e.message}
-        
+
+        response["payload"] = {
+                    "google": {
+                        "expectUserResponse": True,
+                        "richResponse":
+                            {
+                            "items": [
+                                {
+                                    "simpleResponse": {
+                                        "textToSpeech": res["results"][0]["reply"] ,
+                                        "displayText": res["results"][0]["reply"]
+                                    }
+                                }]
+                            }
+                        }
+                    }
+
+        print("Response:")
+        print(speech)
+
         json_dict = {"fulfillmentText": res["results"][0]["reply"],
                      "source": "reply"}
         
-        return json_dict
+        return response
    
     def listup_member(self, push):
         try:
