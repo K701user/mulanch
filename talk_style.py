@@ -46,6 +46,9 @@ class talker:
             print(push)
             res = client.talk(push)
             print(res)
+            response["fulfillmentText"] = [
+                    res["results"][0]["reply"] 
+            ]
             response["payload"] = {
                 "google": 
                 {
@@ -62,9 +65,7 @@ class talker:
                     }
                 }
             }
-            response["text"] = [
-                    res["results"][0]["reply"] 
-            ]
+
             
         except Exception as e:
             return {"error":e.message}
