@@ -49,9 +49,9 @@ class talker:
             response["payload"] = {
                 "default":
                 {
-                    "text":{
+                    "text":[
                         res["results"][0]["reply"] 
-                    }
+                    ]
                 }
                 "google": 
                 {
