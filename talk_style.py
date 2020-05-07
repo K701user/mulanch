@@ -23,7 +23,7 @@ from linebot.models import (
 from janome.tokenizer import Tokenizer
 
 
-talk_apikey = "E1HZR7u2fuhdtBbrATJN5yBYK5atFTl9"
+talk_apikey = "DZZyF7nPhIQoS87LCI7vuIqfdeSElSB8"
 client = pya3rt.TalkClient(talk_apikey)
 
 sample_members = {
