@@ -64,10 +64,10 @@ class talker:
                     }
 
         print("Response:")
-        print(speech)
+        print(response)
 
-        json_dict = {"fulfillmentText": res["results"][0]["reply"],
-                     "source": "reply"}
+#         json_dict = {"fulfillmentText": res["results"][0]["reply"],
+#                      "source": "reply"}
         
         return response
    
