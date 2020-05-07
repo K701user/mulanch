@@ -143,7 +143,10 @@ def processRequest(req):
     talker = talk_style.talker()
     print("OK")
     
-    if "Matching_requeststart" in actiontype or "matchingrequeststart-followup" in req.get('outputContexts').get('name'):
+    if "default" in actiontype:
+        print("A")
+        res = talker.default_talk(q_text)        
+    elif "Matching_requeststart" in actiontype or "matchingrequeststart-followup" in req.get('outputContexts').get('name'):
         print("Matching_requeststart")
         postres = talker.listup_member(q_text)
         try:
