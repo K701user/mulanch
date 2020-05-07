@@ -45,7 +45,7 @@ from flask import abort
 
 from flask import Flask
 from flask import request
-from flask import make_response
+from flask import make_response, jsonify
 
 # Flask app should start in global layout
 app = Flask(__name__)
@@ -54,11 +54,14 @@ handler = WebhookHandler('1d81556ec390b8eeb4da45ac8dae8d11')
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    req = request.get_json(silent=True, force=True)
+#     req = request.get_json(silent=True, force=True)
+#     res = processRequest(req)
+#     res = json.dumps(res, indent=4)
+    req = request.json.get('queryResult')
     res = processRequest(req)
-    res = json.dumps(res, indent=4)
-    r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
+    r = jsonify(res)
+#     r = make_response(res)
+#     r.headers['Content-Type'] = 'application/json'
     print(r)
     return r
 
@@ -129,9 +132,9 @@ def loadsqlRequest(req):
 def processRequest(req):
     try:
         print(req)
-        actiontype = req.get("queryResult").get("action")
-        parameters = req.get("queryResult").get("parameters")
-        q_text = req.get("queryResult").get("queryText")
+        actiontype = req.get("action")
+        parameters = req.get("parameters")
+        q_text = req.get("queryText")
         print(q_text)
     except:
         return {}
