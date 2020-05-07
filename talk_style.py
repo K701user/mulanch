@@ -40,35 +40,37 @@ class talker:
 
     @staticmethod
     def default_talk(push):
+        response = {}
+        
         try:
             print(push)
             res = client.talk(push)
             print(res)
+            response["payload"] = {
+                "google": 
+                {
+                    "expectUserResponse": True,
+                    "richResponse":
+                    {
+                        "items": 
+                        [{
+                            "simpleResponse": {
+                                "textToSpeech": res["results"][0]["reply"] ,
+                                "displayText": res["results"][0]["reply"]
+                            }
+                        }]
+                    }
+                }
+            }
         except Exception as e:
             return {"error":e.message}
-
-        response["payload"] = {
-                    "google": {
-                        "expectUserResponse": True,
-                        "richResponse":
-                            {
-                            "items": [
-                                {
-                                    "simpleResponse": {
-                                        "textToSpeech": res["results"][0]["reply"] ,
-                                        "displayText": res["results"][0]["reply"]
-                                    }
-                                }]
-                            }
-                        }
-                    }
 
         print("Response:")
         print(response)
 
-#         json_dict = {"fulfillmentText": res["results"][0]["reply"],
-#                      "source": "reply"}
-        
+        #         json_dict = {"fulfillmentText": res["results"][0]["reply"],
+        #                      "source": "reply"}
+
         return response
    
     def listup_member(self, push):
