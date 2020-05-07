@@ -52,7 +52,7 @@ class talker:
                     "text":[
                         res["results"][0]["reply"] 
                     ]
-                }
+                },
                 "google": 
                 {
                     "expectUserResponse": True,
