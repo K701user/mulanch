@@ -47,6 +47,12 @@ class talker:
             res = client.talk(push)
             print(res)
             response["payload"] = {
+                "default":
+                {
+                    "text":{
+                        res["results"][0]["reply"] 
+                    }
+                }
                 "google": 
                 {
                     "expectUserResponse": True,
